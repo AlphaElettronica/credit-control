@@ -40,6 +40,23 @@ msgid ""
 "            Best regards\n"
 "        "
 msgstr ""
+"\n"
+"            Dai nostri registri risulta che non abbiamo ancora ricevuto il "
+"pagamento della fattura sotto indicata, nonostante i nostri due solleciti.\n"
+"            Se il pagamento è già stato effettuato, La preghiamo di ignorare "
+"questo avviso. In caso contrario, La invitiamo a procedere con il saldo.\n"
+"            Qualora il pagamento non dovesse pervenire entro i prossimi 5 "
+"giorni, la Sua pratica sarà trasferita alla nostra agenzia di recupero "
+"crediti.\n"
+"\n"
+"            Qualora avesse necessità di concordare un piano di rientro, non "
+"esiti a contattarci.\n"
+"            Per Sua comodità, alleghiamo un estratto conto.\n"
+"\n"
+"            La ringraziamo in anticipo per la Sua cortese collaborazione.\n"
+"\n"
+"            Cordiali saluti\n"
+"        "
 
 #. module: account_credit_control
 #: model:mail.template,body_html:account_credit_control.email_template_credit_control_base
@@ -51,11 +68,17 @@ msgid ""
 "  ${object.policy_level_id.custom_mail_text | safe}\n"
 "  "
 msgstr ""
+"\n"
+"  Gentile ${object.contact_address_id.name or ''}\n"
+"  <br/>\n"
+"  <br/>\n"
+"  ${object.policy_level_id.custom_mail_text | safe}\n"
+"  "
 
 #. module: account_credit_control
 #: model:ir.model.fields,field_description:account_credit_control.field_credit_control_run__credit_control_communication_count
 msgid "# of Credit Control Communications"
-msgstr ""
+msgstr "Numero di Comunicazioni per il Recupero Crediti"
 
 #. module: account_credit_control
 #: model:ir.model.fields,field_description:account_credit_control.field_credit_control_run__credit_control_count
@@ -68,12 +91,12 @@ msgstr "Riga controllo di credito"
 #. module: account_credit_control
 #: model:credit.control.policy.level,name:account_credit_control.3_time_3
 msgid "10 days last reminder"
-msgstr ""
+msgstr "Ultimo sollecito a 10 giorni"
 
 #. module: account_credit_control
 #: model:credit.control.policy.level,name:account_credit_control.3_time_1
 msgid "10 days net"
-msgstr "10 giorni netto"
+msgstr "Netto a 10 giorni"
 
 #. module: account_credit_control
 #: model:credit.control.policy.level,name:account_credit_control.2_time_1
@@ -84,17 +107,17 @@ msgstr "30 giorni fine mese"
 #. module: account_credit_control
 #: model:credit.control.policy.level,name:account_credit_control.2_time_2
 msgid "60 days last reminder"
-msgstr "60 giorni da ultimo promemoria"
+msgstr "Ultimo sollecito a 60 giorni"
 
 #. module: account_credit_control
 #: model_terms:ir.ui.view,arch_db:account_credit_control.res_config_settings_view_form
 msgid "<span class=\"o_form_label\">Default Credit Tolerance</span>"
-msgstr ""
+msgstr "<span class=\"o_form_label\">Tolleranza Predefinita sul Credito</span>"
 
 #. module: account_credit_control
 #: model_terms:ir.ui.view,arch_db:account_credit_control.res_config_settings_view_form
 msgid "<span class=\"o_form_label\">Default Policy</span>"
-msgstr ""
+msgstr "<span class=\"o_form_label\">Politica Predefinita</span>"
 
 #. module: account_credit_control
 #: model_terms:ir.ui.view,arch_db:account_credit_control.credit_control_policy_changer_form
@@ -102,6 +125,8 @@ msgid ""
 "<span class=\"o_form_label\">This wizard will let you set the overdue policy "
 "and level for selected invoices</span>"
 msgstr ""
+"<span class=\"o_form_label\">Questo wizard consente di impostare "
+"la politica e il livello di sollecito per le fatture selezionate</span>"
 
 #. module: account_credit_control
 #: model_terms:ir.ui.view,arch_db:account_credit_control.credit_line_marker_form
@@ -109,6 +134,8 @@ msgid ""
 "<span class=\"o_form_label\">Warning: you will maybe not be able to revert "
 "this operation.</span>"
 msgstr ""
+"<span class=\"o_form_label\">Attenzione: potrebbe non essere possibile "
+"annullare questa operazione.</span>"
 
 #. module: account_credit_control
 #: model_terms:ir.ui.view,arch_db:account_credit_control.report_credit_control_summary_document
@@ -128,18 +155,18 @@ msgstr "<strong>Totale fatturato</strong>"
 #. module: account_credit_control
 #: model:ir.model,name:account_credit_control.model_credit_control_line
 msgid "A credit control line"
-msgstr "Riga controllo di credito"
+msgstr "Una linea di recupero crediti"
 
 #. module: account_credit_control
 #: code:addons/account_credit_control/models/credit_control_run.py:0
 #, python-format
 msgid "A credit control line more recent than %s exists at %s"
-msgstr "Un procedura di richiamo piu' recente rispetto a %s esiste qui %s"
+msgstr "Esiste già una linea di recupero crediti più recente del %s in stato %s"
 
 #. module: account_credit_control
 #: model:ir.model,name:account_credit_control.model_credit_control_policy_level
 msgid "A credit control policy level"
-msgstr "Livello del controllo credito"
+msgstr "Un livello della politica di recupero crediti"
 
 #. module: account_credit_control
 #: code:addons/account_credit_control/models/credit_control_run.py:0
@@ -152,7 +179,7 @@ msgstr "Un controllo di credito automatico è già in corso, riprovare più tard
 #: code:addons/account_credit_control/models/credit_control_run.py:0
 #, python-format
 msgid "A run has already been executed more recently (%s)"
-msgstr ""
+msgstr "È già stata eseguita un'esecuzione in data più recente (%s)"
 
 #. module: account_credit_control
 #: model:ir.model,name:account_credit_control.model_account_account
@@ -165,7 +192,7 @@ msgstr "Conto"
 #: model:ir.model.fields,field_description:account_credit_control.field_credit_control_policy__account_ids
 #: model_terms:ir.ui.view,arch_db:account_credit_control.credit_control_policy_form
 msgid "Accounts"
-msgstr ""
+msgstr "Conti"
 
 #. module: account_credit_control
 #: model:ir.model.fields,field_description:account_credit_control.field_credit_control_communication__message_needaction
@@ -195,18 +222,18 @@ msgstr "Decorazione eccezione attività"
 #: model:ir.model.fields,field_description:account_credit_control.field_credit_control_communication__activity_state
 #: model:ir.model.fields,field_description:account_credit_control.field_credit_control_line__activity_state
 msgid "Activity State"
-msgstr ""
+msgstr "Stato Attività"
 
 #. module: account_credit_control
 #: model:ir.model.fields,field_description:account_credit_control.field_credit_control_communication__activity_type_icon
 #: model:ir.model.fields,field_description:account_credit_control.field_credit_control_line__activity_type_icon
 msgid "Activity Type Icon"
-msgstr ""
+msgstr "Tipo Icona Attività"
 
 #. module: account_credit_control
 #: model_terms:ir.actions.act_window,help:account_credit_control.action_wizard_credit_policy_changer
 msgid "Allows to manually change credit level"
-msgstr ""
+msgstr "Consenti di eliminare manualmente il livello credito"
 
 #. module: account_credit_control
 #: code:addons/account_credit_control/models/credit_control_communication.py:0
@@ -228,24 +255,24 @@ msgstr "Archiviato"
 #. module: account_credit_control
 #: model_terms:ir.ui.view,arch_db:account_credit_control.credit_control_run_form
 msgid "Are you sure you want to run all ready lines channel action?"
-msgstr ""
+msgstr "Sei sicuro di voler eseguire l'azione del canale su tutte le linee Da Fare?"
 
 #. module: account_credit_control
 #: model_terms:ir.ui.view,arch_db:account_credit_control.credit_control_run_form
 msgid "Are you sure you want to set all Draft lines as Ready To Send?"
-msgstr ""
+msgstr "sei sicuro di voler impostare tutte le linee in Bozza come 'Da Fare'?"
 
 #. module: account_credit_control
 #: model:ir.model.fields,field_description:account_credit_control.field_credit_control_communication__message_attachment_count
 #: model:ir.model.fields,field_description:account_credit_control.field_credit_control_line__message_attachment_count
 msgid "Attachment Count"
-msgstr ""
+msgstr "Numero Allegati"
 
 #. module: account_credit_control
 #: code:addons/account_credit_control/models/credit_control_policy.py:0
 #, python-format
 msgid "Can not get function for computation mode: %s is not implemented"
-msgstr ""
+msgstr "Impossibile ottenere la funzione per la modalità di calcolo: la modalità '%s' non è implementata."
 
 #. module: account_credit_control
 #: model_terms:ir.ui.view,arch_db:account_credit_control.credit_control_policy_changer_form
@@ -260,28 +287,28 @@ msgstr "Annulla"
 #: model:ir.actions.act_window,name:account_credit_control.open_credit_line_marker_wizard_menu_action
 #: model_terms:ir.ui.view,arch_db:account_credit_control.credit_line_marker_form
 msgid "Change Lines' State"
-msgstr ""
+msgstr "Cambia Stato Linee"
 
 #. module: account_credit_control
 #: model:ir.actions.act_window,name:account_credit_control.action_wizard_credit_policy_changer
 #: model:ir.actions.act_window,name:account_credit_control.action_wizard_credit_policy_changer_menu_action
 msgid "Change current credit policy"
-msgstr ""
+msgstr "Modificare la politica di credito attuale"
 
 #. module: account_credit_control
 #: model_terms:ir.ui.view,arch_db:account_credit_control.credit_control_policy_changer_form
 msgid "Change the overdue level of current invoice"
-msgstr ""
+msgstr "Modificare il livello di sollecito della fattura attuale"
 
 #. module: account_credit_control
 #: model_terms:ir.ui.view,arch_db:account_credit_control.credit_line_marker_form
 msgid "Change the state of the selected lines"
-msgstr ""
+msgstr "Modificare lo stato delle linee selezionate"
 
 #. module: account_credit_control
 #: model_terms:ir.actions.act_window,help:account_credit_control.open_credit_line_marker_wizard
 msgid "Change the state of the selected lines."
-msgstr ""
+msgstr "Modificare lo stato delle linee selezionate"
 
 #. module: account_credit_control
 #: model:ir.model.fields,field_description:account_credit_control.field_credit_control_line__channel
@@ -293,18 +320,18 @@ msgstr "Canale"
 #. module: account_credit_control
 #: model:ir.model.fields,field_description:account_credit_control.field_credit_control_line__commercial_partner_id
 msgid "Commercial Entity"
-msgstr ""
+msgstr "Entità Commerciale"
 
 #. module: account_credit_control
 #: model:ir.model.fields,field_description:account_credit_control.field_credit_control_line__communication_id
 msgid "Communication process"
-msgstr ""
+msgstr "Processo di comunicazione"
 
 #. module: account_credit_control
 #: model:ir.ui.menu,name:account_credit_control.credit_control_communication_action_menu
 #: model_terms:ir.ui.view,arch_db:account_credit_control.credit_control_run_form
 msgid "Communications"
-msgstr ""
+msgstr "Comunicazioni"
 
 #. module: account_credit_control
 #: model:ir.model,name:account_credit_control.model_res_company
@@ -325,7 +352,7 @@ msgstr "Azienda"
 #. module: account_credit_control
 #: model_terms:ir.ui.view,arch_db:account_credit_control.credit_control_run_form
 msgid "Compute Credit Control Lines"
-msgstr ""
+msgstr "Calcola Righe Controllo Credito"
 
 #. module: account_credit_control
 #: model:ir.model.fields,field_description:account_credit_control.field_credit_control_policy_level__computation_mode
@@ -335,7 +362,7 @@ msgstr "Metodo di calcolo"
 #. module: account_credit_control
 #: model:ir.model,name:account_credit_control.model_res_config_settings
 msgid "Config Settings"
-msgstr ""
+msgstr "Impostazioni di configurazione"
 
 #. module: account_credit_control
 #: model:ir.model,name:account_credit_control.model_res_partner
